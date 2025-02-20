@@ -1,15 +1,20 @@
 import express from "express";
 import dotenv from "dotenv";
 import cors from "cors";
+import path from "path";
 import {
   fetchFixtures,
   processAndSendData,
 } from "./controllers/sports.controller.js";
+import { fileURLToPath } from "url";
 
 dotenv.config();
 
 const app = express();
 const PORT = process.env.PORT || 5000;
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
 app.use(cors());
 app.use(express.json());
@@ -18,6 +23,11 @@ app.use(express.json());
 app.get("/", async (req, res) => {
   const data = await fetchFixtures();
   res.json(data);
+});
+
+// Serve Telex Integration JSON
+app.get("/telex-config", (req, res) => {
+  res.sendFile(path.join(__dirname, "telex-integration-config.json"));
 });
 
 // Telex tick endpoint

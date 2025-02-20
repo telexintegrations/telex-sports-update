@@ -6,7 +6,7 @@
     },
     "descriptions": {
       "app_description": "Provides real-time football fixtures from major leagues.",
-      "app_logo": "",
+      "app_logo": "https://res.cloudinary.com/dgk3ckyn1/image/upload/v1740090826/football_qmpmz0.jpg",
       "app_name": "Footbal Fixtures Bot",
       "app_url": "https://hng12-backend-stage3-sports-telex.onrender.com",
       "background_color": "#008000"
