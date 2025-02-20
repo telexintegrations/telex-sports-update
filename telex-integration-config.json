@@ -8,7 +8,7 @@
       "app_description": "Provides real-time football fixtures from major leagues.",
       "app_logo": "",
       "app_name": "Footbal Fixtures Bot",
-      "app_url": "",
+      "app_url": "https://hng12-backend-stage3-sports-telex.onrender.com",
       "background_color": "#008000"
     },
     "integration_category": "Sports Updates",
@@ -53,7 +53,7 @@
         "options": ["Super-Admin", "Admin", "Manager", "Developer"]
       }
     ],
-    "tick_url": "",
+    "tick_url": "https://hng12-backend-stage3-sports-telex.onrender.com/tick",
     "target_url": ""
   }
 }
