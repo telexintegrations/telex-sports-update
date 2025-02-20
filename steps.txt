@@ -1,0 +1,10 @@
+apiv2.allsportsapi.com/football?met=Countries
+
+apifootball.com
+
+Bundesliga:     175
+FA Cup:         146
+La Liga:        302
+Ligue 1:        168
+Premier League: 152
+Serie A:        207

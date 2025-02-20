@@ -1,0 +1,59 @@
+{
+  "data": {
+    "date": {
+      "created_at": "2025-02-18",
+      "updated_at": "2025-02-18"
+    },
+    "descriptions": {
+      "app_description": "Provides real-time football fixtures from major leagues.",
+      "app_logo": "",
+      "app_name": "Footbal Fixtures Bot",
+      "app_url": "",
+      "background_color": "#008000"
+    },
+    "integration_category": "Sports Updates",
+    "integration_type": "interval",
+    "is_active": true,
+    "output": [
+      {
+        "label": "sports_channel",
+        "value": true
+      }
+    ],
+    "key_features": [
+      "Real-time football match updates",
+      "Supports multiple leagues.",
+      "Automatically updates every interval.",
+      "Sends data to Telex channels."
+    ],
+    "permissions": {
+      "monitoring_user": {
+        "always_online": true,
+        "display_name": "Football Fixtures Bot"
+      }
+    },
+    "settings": [
+      {
+        "label": "interval",
+        "type": "text",
+        "required": true,
+        "default": "*/20 * * * *"
+      },
+      {
+        "label": "API Key",
+        "type": "text",
+        "required": true,
+        "default": "YOUR_API_KEY"
+      },
+      {
+        "label": "Alert Admin",
+        "type": "multi-checkbox",
+        "required": true,
+        "default": "Super-Admin",
+        "options": ["Super-Admin", "Admin", "Manager", "Developer"]
+      }
+    ],
+    "tick_url": "",
+    "target_url": ""
+  }
+}
