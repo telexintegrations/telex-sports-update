@@ -26,7 +26,7 @@ app.get("/", async (req, res) => {
 });
 
 // Serve Telex Integration JSON
-app.get("/telex-config", (req, res) => {
+app.get("/integration.json", (req, res) => {
   res.sendFile(path.join(__dirname, "telex-integration-config.json"));
 });
 
