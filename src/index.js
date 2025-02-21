@@ -36,6 +36,8 @@ app.post("/tick", async (req, res) => {
     console.log("Tick request received:", req.body);
 
     const { return_url } = req.body;
+    // const return_url =
+    //   "https://ping.telex.im/v1/webhooks/01952571-a058-734b-9d5d-9db4b2df5438";
 
     if (!return_url) {
       return res.status(400).json({ error: "Missingreturn_url" });

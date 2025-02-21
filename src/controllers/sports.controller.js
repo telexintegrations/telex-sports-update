@@ -63,7 +63,8 @@ export const processAndSendData = async (return_url) => {
   for (const [league, matches] of Object.entries(fixtures)) {
     message += `${league.toUpperCase()}\n`;
     matches.forEach((match) => {
-      message += `${match.home_team} vs ${match.away_team}\n`;
+      message += `${match.home_team} --  vs --  ${match.away_team}\n`;
+      message += `Status:  ${match.status} mins\n`;
       message += `Time: ${match.time}   |   Score: ${match.home_team_score}-${match.away_team_score}\n\n`;
     });
   }
