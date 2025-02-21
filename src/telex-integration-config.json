@@ -11,7 +11,7 @@
       "app_url": "https://hng12-backend-stage3-sports-telex.onrender.com",
       "background_color": "#008000"
     },
-    "integration_category": "Sports Updates",
+    "integration_category": "Monitoring & Logging",
     "integration_type": "interval",
     "is_active": true,
     "output": [

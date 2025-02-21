@@ -11,9 +11,11 @@ const LEAGUE_IDS = {
 
 // Fetch sports fixtures
 export const fetchFixtures = async () => {
+  const today = new Date();
+  const formattedDate = today.toISOString().slice(0, 10);
   try {
     const promises = Object.keys(LEAGUE_IDS).map(async (leagueId) => {
-      const url = `https://apiv3.apifootball.com/?action=get_events&league_id=${leagueId}&APIkey=${process.env.APIkey}&from=2025-02-20&to=2025-02-20`;
+      const url = `https://apiv3.apifootball.com/?action=get_events&league_id=${leagueId}&APIkey=${process.env.APIkey}&from=${formattedDate}&to=${formattedDate}`;
       const response = await fetch(url);
       const data = await response.json();
       return {
