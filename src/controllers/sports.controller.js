@@ -13,6 +13,7 @@ const LEAGUE_IDS = {
 export const fetchFixtures = async () => {
   const today = new Date();
   const formattedDate = today.toISOString().slice(0, 10);
+
   try {
     const promises = Object.keys(LEAGUE_IDS).map(async (leagueId) => {
       const url = `https://apiv3.apifootball.com/?action=get_events&league_id=${leagueId}&APIkey=${process.env.APIkey}&from=${formattedDate}&to=${formattedDate}`;
@@ -43,23 +44,45 @@ export const fetchFixtures = async () => {
     return matches;
   } catch (error) {
     console.error("Error fetching league fixtures", error);
-    res.status(500).json({ error: "Failed to fetch league fixtures" });
+    return {};
   }
 };
 
 // Sends data to Telex
 export const processAndSendData = async (return_url) => {
-  try {
-    const fixtures = await fetchFixtures();
+  const fixtures = await fetchFixtures();
 
-    // sends data to Telex
+  if (!fixtures || Object.keys(fixtures).length === 0) {
+    console.error("No fixtures available to send.");
+    return;
+  }
+
+  // Construct the formatted message
+  let message = "SPORTS UPDATE\n\n";
+
+  for (const [league, matches] of Object.entries(fixtures)) {
+    message += `${league.toUpperCase()}\n`;
+    matches.forEach((match) => {
+      message += `${match.home_team} vs ${match.away_team}\n`;
+      message += `Time: ${match.time}   |   Score: ${match.home_team_score}-${match.away_team_score}\n\n`;
+    });
+  }
+
+  // Construct payload for Telex
+  const payload = {
+    event_name: "Sports Update",
+    username: "Footbal Fixtures Bot",
+    status: "success",
+    message, // Send the formatted message
+  };
+
+  console.log("Sending Payload to Telex:", JSON.stringify(payload, null, 2));
+
+  try {
     const response = await fetch(return_url, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({
-        message: "Latest Football Fixtures",
-        data: fixtures,
-      }),
+      body: JSON.stringify(payload),
     });
 
     if (!response.ok) {

@@ -33,6 +33,8 @@ app.get("/integration.json", (req, res) => {
 // Telex tick endpoint
 app.post("/tick", async (req, res) => {
   try {
+    console.log("Tick request received:", req.body);
+
     const { return_url } = req.body;
 
     if (!return_url) {
@@ -47,6 +49,11 @@ app.post("/tick", async (req, res) => {
     console.error("Error processing tick:", error);
     res.status(500).json({ error: "Failed to process tick" });
   }
+});
+
+app.post("/test-webhook", (req, res) => {
+  console.log("Received Webhook Data:", req.body);
+  res.status(200).json({ message: "Webhook received" });
 });
 
 app.listen(PORT, () => {

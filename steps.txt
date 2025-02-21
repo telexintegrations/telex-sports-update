@@ -8,3 +8,14 @@ La Liga:        302
 Ligue 1:        168
 Premier League: 152
 Serie A:        207
+
+https://ping.telex.im/v1/webhooks/01952571-a058-734b-9d5d-9db4b2df5438?event_name=Sample Event&message=This is a sample webhook&status=success&username=Collins
+
+
+$ curl -X POST "https://ping.telex.im/v1/webhooks/01952571-a058-734b-9d5d-9db4b2df5438"      -H "Content-Type: application/json"      -d '{
+       "event_name": "Sports Update",
+       "message": "⚽ Latest Sports Fixtures:\n\n- Premier League: Leicester vs Brentford (Time: 21:00 | Score: -)\n- Ligue 1: Rennes vs Reims (Time: 20:45 | Score: -)\n- Bundesliga: Freiburg vs Werder Bremen (Time: 20:30 | Score: -)\n- Serie A: Lecce vs Udinese (Time: 20:45 | Score: -)\n- La Liga: **Celta Vigo** vs Osasuna (Time: 21:00 | Score: -)",
+       "status": "success",
+       "username": "Collins"
+     }'
+
