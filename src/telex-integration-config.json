@@ -1,59 +1,35 @@
 {
   "data": {
     "date": {
-      "created_at": "2025-02-18",
-      "updated_at": "2025-02-18"
+      "created_at": "2025-02-20",
+      "updated_at": "2025-02-20"
     },
     "descriptions": {
+      "app_name": "Footbal Fixtures Bot",
       "app_description": "Provides real-time football fixtures from major leagues.",
       "app_logo": "https://res.cloudinary.com/dgk3ckyn1/image/upload/v1740090826/football_qmpmz0.jpg",
-      "app_name": "Footbal Fixtures Bot",
       "app_url": "https://hng12-backend-stage3-sports-telex.onrender.com",
-      "background_color": "#008000"
+      "background_color": "#fff"
     },
-    "integration_category": "Monitoring & Logging",
-    "integration_type": "interval",
     "is_active": true,
-    "output": [
-      {
-        "label": "sports_channel",
-        "value": true
-      }
-    ],
+    "integration_type": "interval",
+    "integration_category": "Monitoring & Logging",
     "key_features": [
       "Real-time football match updates",
       "Supports multiple leagues.",
       "Automatically updates every interval.",
       "Sends data to Telex channels."
     ],
-    "permissions": {
-      "monitoring_user": {
-        "always_online": true,
-        "display_name": "Football Fixtures Bot"
-      }
-    },
+    "author": "Cypher",
     "settings": [
       {
         "label": "interval",
         "type": "text",
         "required": true,
-        "default": "* * * * * *"
-      },
-      {
-        "label": "API Key",
-        "type": "text",
-        "required": true,
-        "default": "YOUR_API_KEY"
-      },
-      {
-        "label": "Alert Admin",
-        "type": "multi-checkbox",
-        "required": true,
-        "default": "Super-Admin",
-        "options": ["Super-Admin", "Admin", "Manager", "Developer"]
+        "default": "* * * * *"
       }
     ],
-    "tick_url": "https://hng12-backend-stage3-sports-telex.onrender.com/tick",
-    "target_url": ""
+    "target_url": "   ",
+    "tick_url": "https://hng12-backend-stage3-sports-telex.onrender.com/tick"
   }
 }
