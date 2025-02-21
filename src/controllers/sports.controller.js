@@ -77,7 +77,7 @@ export const processAndSendData = async (return_url) => {
     message, // Send the formatted message
   };
 
-  console.log("Sending Payload to Telex:", JSON.stringify(payload, null, 2));
+  // console.log("Sending Payload to Telex:", JSON.stringify(payload, null, 2));
 
   try {
     const response = await fetch(return_url, {
@@ -90,7 +90,7 @@ export const processAndSendData = async (return_url) => {
       throw new Error(`Telex response error: ${response.status}`);
     }
 
-    console.log("Fixtures successfully sent to Telex");
+    // console.log("Fixtures successfully sent to Telex");
   } catch (error) {
     console.error("Error sending data to Telex", error);
   }

@@ -19,3 +19,6 @@ $ curl -X POST "https://ping.telex.im/v1/webhooks/01952571-a058-734b-9d5d-9db4b2
        "username": "Collins"
      }'
 
+https://ping.telex.im/v1/webhooks/01952571-a058-734b-9d5d-9db4b2df5438
+
+https://apiv3.apifootball.com/?action=get_events&league_id=302&APIkey=fc0be7d0ecb44bdfb83c4e1ed28e148caae020928642c85e76b897d4e96d897f&from=2025-02-21&to=2025-02-21
