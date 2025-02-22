@@ -2,13 +2,13 @@
   "data": {
     "date": {
       "created_at": "2025-02-20",
-      "updated_at": "2025-02-20"
+      "updated_at": "2025-02-22"
     },
     "descriptions": {
-      "app_name": "Footbal Fixtures Bot",
+      "app_name": "Football Fixtures Bot",
       "app_description": "Provides real-time football fixtures from major leagues.",
       "app_logo": "https://res.cloudinary.com/dgk3ckyn1/image/upload/v1740090826/football_qmpmz0.jpg",
-      "app_url": "https://hng12-backend-stage3-sports-telex.onrender.com",
+      "app_url": "https://telex-sports-update.onrender.com",
       "background_color": "#fff"
     },
     "is_active": true,
@@ -30,6 +30,6 @@
       }
     ],
     "target_url": "   ",
-    "tick_url": "https://hng12-backend-stage3-sports-telex.onrender.com/tick"
+    "tick_url": "https://telex-sports-update.onrender.com/tick"
   }
 }
